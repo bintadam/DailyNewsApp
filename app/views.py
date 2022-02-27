@@ -21,4 +21,5 @@ def news(news_id):
     '''
     View news page function that returns the news details page and its data
     '''
+    title = 'Home - Welcome to the best News Review Website online'
     return render_template('news.html',id = news_id)
