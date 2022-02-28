@@ -4,18 +4,18 @@ from models import source
 
 
 # Getting api key
-MY_API_KEY = None
+ARTICLES = None
 # Getting the movie base url
-MY_BASE_URL = None
+SOURCES = None
 
 def configure_request(app):
-    global MY_API_KEY,MY_BASE_URL
-    MY_API_KEY = app.config['MY_API_KEY']
-    MY_BASE_URL = app.config['MY_BASE_URL']
+    global ARTICLES, SOURCES
+    ARTICLES = app.config['ARTICLES']
+    SOURCES = app.config['SOURCES']
 
 
 def get_articles(source):
-    path = MY_API_KEY.format(source)
+    path = ARTICLES.format(source)
     content = request.urlopen(path)
     jason = jason.loads(content.read())
     return jason ['articles']
@@ -39,7 +39,7 @@ def process_articles(articles):
 
 
 def get_sources(category):
-    path = MY_BASE_URL.format(category)
+    path = SOURCES.format(category)
     content = request.urlopen(path)
     jason = jason.loads(content.read())
     return jason['source']        
