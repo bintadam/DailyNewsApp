@@ -1,6 +1,5 @@
 import urllib.request,json 
-from models import article
-from models import source
+from .models import article, source
 
 
 # Getting api key
@@ -48,7 +47,7 @@ def get_sources(category):
 def process_articles(sources)
     my_sources = []
     for s in sources    
-        s = sources(
+        s = source(
           s['id'],
           s['name'],
           s['description'],
