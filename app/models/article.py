@@ -3,10 +3,12 @@ class article :
      class articles to define article Objects
     '''
 
-    def __init__(self,id,title,overview,poster,vote_average,vote_count):
-        self.id =id
+    def __init__(self,source,title,author,urlToImage,url,publishedAt,description,content):
+        self.source = source
         self.title = title
-        self.overview = overview
-        self.poster = 'https://image.tmdb.org/t/p/w500/'+ poster
-        self.vote_average = vote_average
-        self.vote_count = vote_count
+        self.author = author
+        self.urlToImage = urlToImage
+        self.url = url
+        self.publishedAt = publishedAt
+        self.description = description
+        self.content = content
