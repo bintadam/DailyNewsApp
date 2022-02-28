@@ -25,3 +25,10 @@ def process_articles(articles):
         )
         my_articles.append(a)
         return my_articles
+
+
+def get_source(category):
+    path = source.format(category)
+    content = request.urlopen(path)
+    jason = jason.loads(content.read())
+    return jason['source']        
