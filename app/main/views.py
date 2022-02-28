@@ -3,24 +3,24 @@ from  .views import *
 from  . import main
 from ..request import *
 
-@m.route('/')
-def index():
+@main.route('/')
+def root():
 
-    '''
-    View root page function that returns the index page and its data
-    '''
+    return redirect(url_for('main.sources'))
 
+@main.route('/sources')
+def sources():
     
-    title = 'Home - Welcome to The best News Review Website Online'
-    return render_template('index.html', title = title)
+    title = 'sources'
+    sports_sources = get_sources('sports')
+    worklife_sources = get_sources('worklife')
+    travel_sources = get_sources('travel')
+    culture_sources = get_sources('culture')
+    
+    return render_template('index.html', title=title, sports=sports_sources, worklife=worklife_sources, travel=travel_sources, culture=culture_sources)
 
 
-@app.route('/news/<int:news_id>')
-def news(news_id):
-    
-    
-    '''
-    View news page function that returns the news details page and its data
-    '''
-    title = 'Home - Welcome to the best News Review Website online'
-    return render_template('news.html',id = news_id)
+@main.route('/articles/<source>')
+def articles(source):
+    articles = get_articles(source)
+    return render_template('news.html, title=source, articles=articles')
