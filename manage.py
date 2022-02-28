@@ -1,4 +1,6 @@
-from app import app
+# Creating app instance
+app = create_app('development')
 
-if __name__ == '__main__':
-    app.run()
+manager = Manager(app)
+manager.add_command('server',Server)
+
