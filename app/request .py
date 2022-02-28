@@ -15,7 +15,7 @@ def configure_request(app):
 
 
 def get_articles(source):
-    path = article.format(source)
+    path = MY_API_KEY.format(source)
     content = request.urlopen(path)
     jason = jason.loads(content.read())
     return jason ['articles']
@@ -39,7 +39,7 @@ def process_articles(articles):
 
 
 def get_sources(category):
-    path = source.format(category)
+    path = MY_BASE_URL.format(category)
     content = request.urlopen(path)
     jason = jason.loads(content.read())
     return jason['source']        
@@ -55,3 +55,6 @@ def process_articles(sources)
           s['url'],
           s['language']
         )
+
+        my_sources.append(s)
+        return my_sources
