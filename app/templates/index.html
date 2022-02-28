@@ -33,6 +33,49 @@
             <li>{{source['name']}}</li>
             <span><a href="{{ url_for('main.articles', source=source['name'])}}">{{source.id}}</a></span>
           </ul>
+          {% endfor %}
+         </div>
+      </div>
+      <!-- worklife section -->
+      <div class="card">
+        <div class="card-title">
+            <h2>Worklife</h2>
+        </div>
+        <div class="card-body">
+        {% source for sports%}
+          <ul>
+            <li>{{source['name']}}</li>
+            <span><a href="{{ url_for('main.articles', source=source['name'])}}">{{source.id}}</a></span>
+          </ul>
+          {% endfor %}
+         </div>
+      </div>
+      <!-- travel section -->
+      <div class="card">
+        <div class="card-title">
+            <h2>Travel</h2>
+        </div>
+        <div class="card-body">
+        {% source for sports%}
+          <ul>
+            <li>{{source['name']}}</li>
+            <span><a href="{{ url_for('main.articles', source=source['name'])}}">{{source.id}}</a></span>
+          </ul>
+          {% endfor %}
+         </div>
+      </div>
+      <!-- culture section -->
+      <div class="card">
+        <div class="card-title">
+            <h2>Culture</h2>
+        </div>
+        <div class="card-body">
+        {% source for sports%}
+          <ul>
+            <li>{{source['name']}}</li>
+            <span><a href="{{ url_for('main.articles', source=source['name'])}}">{{source.id}}</a></span>
+          </ul>
+          {% endfor %}
          </div>
       </div>
     </div>
