@@ -1,7 +1,18 @@
-from app import app
 import urllib.request,json 
 from models import article
 from models import source
+
+
+# Getting api key
+MY_API_KEY = None
+# Getting the movie base url
+MY_BASE_URL = None
+
+def configure_request(app):
+    global MY_API_KEY,MY_BASE_URL
+    MY_API_KEY = app.config['MY_API_KEY']
+    MY_BASE_URL = app.config['MY_BASE_URL']
+
 
 def get_articles(source):
     path = article.format(source)
