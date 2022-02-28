@@ -22,17 +22,19 @@
       </div>
     </nav> 
     <div class="container">
-        <div class="card">
-            <div class="card-title">
-                <h2>Sports</h2>
-            </div>
-            <div class="card-body">
-                {% source for sports%}
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
+        <!-- sports section -->
+      <div class="card">
+        <div class="card-title">
+            <h2>Sports</h2>
         </div>
+        <div class="card-body">
+        {% source for sports%}
+          <ul>
+            <li>{{source['name']}}</li>
+            <span><a href="{{ url_for('main.articles', source=source['name'])}}">{{source.id}}</a></span>
+          </ul>
+         </div>
+      </div>
     </div>
     
   </body>
