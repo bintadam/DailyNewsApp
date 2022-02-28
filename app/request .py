@@ -27,8 +27,20 @@ def process_articles(articles):
         return my_articles
 
 
-def get_source(category):
+def get_sources(category):
     path = source.format(category)
     content = request.urlopen(path)
     jason = jason.loads(content.read())
     return jason['source']        
+
+
+def process_articles(sources)
+    my_sources = []
+    for s in sources    
+        s = sources(
+          s['id'],
+          s['name'],
+          s['description'],
+          s['url'],
+          s['language']
+        )
