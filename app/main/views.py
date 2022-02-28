@@ -1,8 +1,9 @@
-from flask import render_template
-from app import app
+from flask import render_template, request, redirect, url_for
+from  .views import *
+from  . import main
+from ..request import *
 
-# Views
-@app.route('/')
+@m.route('/')
 def index():
 
     '''
