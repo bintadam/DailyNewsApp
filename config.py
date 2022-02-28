@@ -8,7 +8,7 @@ class Config:
 
     MY_NEWS_BASE_URL ='https://newsapi.org'
     ARTICLES ='https://newsapi.org/v2/everything?sources={}&apikey=' + str(MY_API_KEY)
-    SOURCES = 'https://newsapi.org/v2/top-headlines/sources?category={}apikey=' + str(MY_API_KEY)
+    SOURCES = 'https://newsapi.org/v2/top-headlines/sources?category={}&apikey=' + str(MY_API_KEY)
 
  
     pass
