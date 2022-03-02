@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-xl navbar-dark bg-secondary">
       <div class="container-fluid">
         <a class="navbar-brand">
           <h1>News Website</h1>
@@ -22,62 +22,65 @@
       </div>
     </nav> 
     <div class="container">
+
+        <!-- news section -->
+        <div class="card">
+          <div class="card-title">
+              <h2>General</h2>
+          </div>
+          <div class="card-body">
+          {%for source in news %}
+            <ul>
+              <li>{{source['name']}}</li>
+              <span><a href="{{source.url}}">read</a></span>
+            </ul>
+            {% endfor %}
+           </div>
+        </div>
+
         <!-- sports section -->
       <div class="card">
         <div class="card-title">
             <h2>Sports</h2>
         </div>
         <div class="card-body">
-        {% source for sports%}
+        {% for source in sports%}
           <ul>
             <li>{{source['name']}}</li>
-            <span><a href="{{ url_for('main.articles', source=source['name'])}}">{{source.id}}</a></span>
+            <span><a href="{{source.url}}">visit</a></span>
           </ul>
           {% endfor %}
          </div>
       </div>
-      <!-- worklife section -->
+      <!-- health section -->
       <div class="card">
         <div class="card-title">
-            <h2>Worklife</h2>
+            <h2>health</h2>
         </div>
         <div class="card-body">
-        {% source for worklife%}
+        {% for source in health%}
           <ul>
             <li>{{source['name']}}</li>
-            <span><a href="{{ url_for('main.articles', source=source['name'])}}">{{source.id}}</a></span>
+            <span><a href="{{source.url}}">view</a></span>
           </ul>
           {% endfor %}
          </div>
       </div>
-      <!-- travel section -->
+      <!-- business section -->
       <div class="card">
         <div class="card-title">
-            <h2>Travel</h2>
+            <h2>business</h2>
         </div>
         <div class="card-body">
-        {% source for travel%}
+        {% for source in business%}
           <ul>
             <li>{{source['name']}}</li>
-            <span><a href="{{ url_for('main.articles', source=source['name'])}}">{{source.id}}</a></span>
+            <span><a href="{{source.url}}">read</a></span>
           </ul>
           {% endfor %}
          </div>
       </div>
-      <!-- culture section -->
-      <div class="card">
-        <div class="card-title">
-            <h2>Culture</h2>
-        </div>
-        <div class="card-body">
-        {% source for %}
-          <ul>
-            <li>{{source['name']}}</li>
-            <span><a href="{{ url_for('main.articles', source=source['name'])}}">{{source.id}}</a></span>
-          </ul>
-          {% endfor %}
-         </div>
-      </div>
+    
     </div>
     
   </body>

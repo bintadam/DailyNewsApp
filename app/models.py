@@ -1,4 +1,4 @@
-class article :
+class Article :
     '''
      class articles to define article Objects
     '''
@@ -14,7 +14,7 @@ class article :
         self.content = content
 
 
-class source:
+class Source:
     '''
     source class to define source 
     '''
